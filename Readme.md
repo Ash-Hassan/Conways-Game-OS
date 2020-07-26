@@ -1,4 +1,4 @@
-# HCI 104475: Conway Game of Life - An OS course project#
+# HCI 104475: Conway Game of Life - An OS course project #
 ### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
