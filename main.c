@@ -1,17 +1,35 @@
 #include <stdio.h>
+#include <pthread.h>
+#include <stdlib.h>
 #include <time.h>
 
 int M = 10, N = 10, i, j, l, m, master, gencounter = 1;
 double total=0,avg=0;
-// Function to print next generation 
-	void nextGeneration(int gridd[10][10], int future[10][10], int MM, int NN)
-{
+int future[10][10]={
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+    int grid[10][10],last[10][10]; 
+
+void* threadFunction(void* input) 
+{ 
+  
+  int ngen=(int)input;
+  for (int master = 0; master < ngen; master++)
+	{
   clock_t t;
   t = clock();
 	// Loop through every cell
-	for (int l = 1; l < MM - 1; l++)
+	for (int l = 1; l < M - 1; l++)
 	{
-		for (int m = 1; m < NN - 1; m++)
+		for (int m = 1; m < N - 1; m++)
 		{
 			// finding no Of Neighbours
 			// that are alive
@@ -20,31 +38,31 @@ double total=0,avg=0;
 			{
 				for (int j = -1; j <= 1; j++)
 				{
-					aliveNeighbours += gridd[l + i][m + j];
+					aliveNeighbours += grid[l + i][m + j];
 				}
 			}
 
 			// The cell needs to be subtracted
 			// from its neighbours as it was
 			// counted before
-			aliveNeighbours -= gridd[l][m];
+			aliveNeighbours -= grid[l][m];
 
 			// Implementing the Rules of Life
 
 			// Cell is lonely and dies
-			if ((gridd[l][m] == 1) && (aliveNeighbours < 2))
+			if ((grid[l][m] == 1) && (aliveNeighbours < 2))
 			{
 				future[l][m] = 0;
 			}
 
 			// Cell dies due to over population
-			else if ((gridd[l][m] == 1) && (aliveNeighbours > 3))
+			else if ((grid[l][m] == 1) && (aliveNeighbours > 3))
 			{
 				future[l][m] = 0;
 			}
 
 			// A new cell is born
-			else if ((gridd[l][m] == 0) && (aliveNeighbours == 3))
+			else if ((grid[l][m] == 0) && (aliveNeighbours == 3))
 			{
 				future[l][m] = 1;
 			}
@@ -52,7 +70,7 @@ double total=0,avg=0;
 			// Remains the same
 			else
 			{
-				future[l][m] = gridd[l][m];
+				future[l][m] = grid[l][m];
 			}
 		}
 	}
@@ -80,28 +98,27 @@ double total=0,avg=0;
       fputs("\n", fptr);
     }
   fclose (fptr);
-}
- 
   
+		for (i = 0; i < 10; i++)
+		{
+			for (j = 0; j < 10; j++)
+			{
+				grid[i][j] = future[i][j];
+        last[i][j]=future[i][j];
+        future[i][j] = 0;
+			}
+		}
+ 
+  }
+}
 
-int main() 
-{ 
-	int M = 10;
-  int N = 10;
-  int future[10][10] = {
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
-  FILE *fp = fopen("Input.txt", "r");
+int main(void) {
+  int gen;
+  printf("Enter no of Generations?");
+  scanf("%d",&gen);
+
+ FILE *fp = fopen("Input.txt", "r");
     int get;
-    int grid[10][10];
 
 //Filling the array:
 for(int i=0; i < M; i++){
@@ -120,31 +137,18 @@ for(int i=0; i < M; i++){
 
   printf("\n");
    fclose(fp);
-  nextGeneration(grid,future, M, N);
 
-  for (int master = 0; master < 49; master++)
-	{
-		for (i = 0; i < 10; i++)
-		{
-			for (j = 0; j < 10; j++)
-			{
-				grid[i][j] = future[i][j];
-			}
-		}
-		for (i = 0; i < 10; i++)
-		{
-			for (j = 0; j < 10; j++)
-			{
-				future[i][j] = 0;
-			}
-		}
-    nextGeneration(grid, future, M, N);
-	}
+//Single Thread
+  pthread_t tid1;
+	pthread_create(&tid1,NULL,&threadFunction,(void*)gen);
+	pthread_join(tid1,NULL);
+  
+
   //Printing the array
 printf("Last Generation: \n");
 for(int i=0; i < M; i++){
     for(int j=0; j < N; j++)
-        printf("%d ", future[i][j]);
+        printf("%d ", last[i][j]);
         printf("\n");
     }
     printf("Average time: %f seconds\n",avg);
@@ -158,5 +162,5 @@ for(int i=0; i < M; i++){
   fputs(str1,fptr);
   fclose (fptr);
 
-	return 0; 
-} 
+  return 0;
+}
