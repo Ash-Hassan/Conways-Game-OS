@@ -1,28 +1,29 @@
-Each and everything that is listed below is implemented !! Singlethread is also implemented by making global variables and passing num of generation as thread input.
+#HCI 104475: Conway Game of Life - An OS course project#
+###PROJECT MEMBERS###
+StdID | Name
+------------ | -------------
+**64156** | **Hassan Zaheer** <!--this is the group leader in bold-->
+64160 | Shahmeer khan
+<!-- Replace name and student ids with acutally group member names and ids-->
+## Approach ##
+First i learn the rules of the game then i googled some source code and found 1 of c# from geekforgeeks but that was method based and hardcoded.
+so i eventually converted the syntax in c and run it after that i loaded array from file by using FILE and its functions..
+then i made single threadfunction and put the nextgeneration code in it.
+the output was saved in a file and every generation output was appended in file.
+finally i calculated the time by using <time.h> library and saved that too in the file at the end.
 
-Project phase1 informal guidelines. Submission on LMS by a gitHUB link.
+## Problems Faces ##
 
-1. Groups of two.
-2. You have to simulate Conway's Game of Life
-3. You have to submit on GitHub
-  a.Make a repository - Leader
-  b. Add the other grroup partner to the repository as collaborator.
-4. Make a single threaded C program.
-5. Take input from a file.
+### Problem 1: I don't know how the game works(rules)###
+Replace the heading and text of this to mention the problem you have faced in your project.
 
-0, 0, 0, 0, 0, 0, 0, 0
-0, 0, 0, 0, 1, 1, 0, 0
-0, 0, 0, 0, 1, 0, 0, 0
-0, 0, 0, 0, 0, 0, 0, 0
+### Problem 2: Threadfunction was hard as it dosnt ake multiple arguments ###
+Replace the heading and text of this to mention the problem you have faced in your project.
 
-6.Take command line arguments | int main (int argc, char* argv[]){}
-  a. 1st argument is a txt file.
-  b. single int telling the number of generation.
-  c. single int telling the size of the window i.e. NxN
-  d. D:> ./conway input.txt 50 1000
+### Problem 3: Time Constarint as i started the project a day before deadline ###
+Replace the heading and text of this to mention the problem you have faced in your project.
 
-7. Output in a file by name output.txt
-  a. The final state of the window after the generation mentioned in command line argument
-  b. average time taken for each generation
-  c. total time
-  
+## References ##
+- Basic code of game from https://www.geeksforgeeks.org/program-for-conways-game-of-life/
+- How to load 2d array from a file from https://www.reddit.com/r/C_Programming/comments/2nt9n4/reading_from_txt_file_into_2d_array_help_needed/
+- Many other website for sytax checking and eleminating errors.
