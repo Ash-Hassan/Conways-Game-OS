@@ -14,7 +14,7 @@ finally i calculated the time by using <time.h> library and saved that too in th
 
 ## Problems Faces ##
 
-### Problem 1: I don't know how the game works(rules)###
+### Problem 1: I don't know how the game works(rules) ###
 Got the idea from GeaksforGeeks.
 
 ### Problem 2: Threadfunction was hard as it dosnt ake multiple arguments ###
