@@ -1,5 +1,5 @@
-#HCI 104475: Conway Game of Life - An OS course project#
-###PROJECT MEMBERS###
+# HCI 104475: Conway Game of Life - An OS course project#
+### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
 **64156** | **Hassan Zaheer** <!--this is the group leader in bold-->
