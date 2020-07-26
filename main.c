@@ -1,9 +1,13 @@
 #include <stdio.h>
+#include <time.h>
 
 int M = 10, N = 10, i, j, l, m, master, gencounter = 1;
+double total=0,avg=0;
 // Function to print next generation 
 	void nextGeneration(int gridd[10][10], int future[10][10], int MM, int NN)
 {
+  clock_t t;
+  t = clock();
 	// Loop through every cell
 	for (int l = 1; l < MM - 1; l++)
 	{
@@ -52,8 +56,11 @@ int M = 10, N = 10, i, j, l, m, master, gencounter = 1;
 			}
 		}
 	}
+  t = clock() - t;
+	double time_taken = ((double)t)/CLOCKS_PER_SEC; 
+  total=total+time_taken;
+  avg=total/50;
 
-	
   int i,n;
   char str[100];
   char str1[100];
@@ -133,5 +140,23 @@ for(int i=0; i < M; i++){
 		}
     nextGeneration(grid, future, M, N);
 	}
+  //Printing the array
+printf("Last Generation: \n");
+for(int i=0; i < M; i++){
+    for(int j=0; j < N; j++)
+        printf("%d ", future[i][j]);
+        printf("\n");
+    }
+    printf("Average time: %f seconds\n",avg);
+    printf("Total timetaken: %f seconds",total);
+    //Append time
+    char str[100],str1[100];
+    FILE *fptr = fopen("Output.txt", "a");
+  sprintf(str,"Average time: %f seconds\n",avg); 
+  fputs(str,fptr);
+  sprintf(str1,"Total timetaken: %f seconds",total);
+  fputs(str1,fptr);
+  fclose (fptr);
+
 	return 0; 
 } 

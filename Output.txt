@@ -548,3 +548,5 @@ Generation 50 :
 0 0 0 0 0 1 0 0 0 0 
 0 0 0 0 0 1 0 0 0 0 
 0 0 0 0 0 0 0 0 0 0 
+Average time: 0.000006 seconds
+Total timetaken: 0.000300 seconds
