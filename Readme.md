@@ -24,6 +24,6 @@ Made many variables gloabl so that they dosent required to be passed and passed 
 working late at night :)
 
 ## References ##
-- Basic code of game from https://www.geeksforgeeks.org/program-for-conways-game-of-life/
-- How to load 2d array from a file from https://www.reddit.com/r/C_Programming/comments/2nt9n4/reading_from_txt_file_into_2d_array_help_needed/
+- Basic code of game: https://www.geeksforgeeks.org/program-for-conways-game-of-life/
+- How to load 2d array from a file: https://www.reddit.com/r/C_Programming/comments/2nt9n4/reading_from_txt_file_into_2d_array_help_needed/
 - Many other website for sytax checking and eleminating errors.
