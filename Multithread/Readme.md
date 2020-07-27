@@ -1,29 +1,29 @@
-#HCI 104497: Conway Game of Life - An OS course project#
-###PROJECT MEMBERS###
+# HCI 104475: Conway Game of Life - An OS course project #
+### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
-**12345** | **Amjad Majid** <!--this is the group leader in bold-->
-54321 | Sajid Rashid
+**64156** | **Hassan Zaheer** <!--this is the group leader in bold-->
+64160 | Shahmeer khan
 <!-- Replace name and student ids with acutally group member names and ids-->
 ## Approach ##
-Replace this text with the description of the approach you have taken to solve this problem.
+Converting from signle thread to multi thread was fairly easy.
+Instead of calling loop in one thread i made multiple threads that was being created in a loop in main.
+Time calculation is also done in main.
+Rest is more or less same as single thread.
 
 ## Problems Faces ##
 
-###Problem 1: I don't know how to Code###
-Replace the heading and text of this to mention the problem you have faced in your project.
+### Problem 1: I don't know how To create Threads in loop ###
+Got the idea from Stackoverflow.
 
-###Problem 2: I was not interested in CS my parents forces me###
-Replace the heading and text of this to mention the problem you have faced in your project.
+### Problem 2: Threadfunction was hard as it dosnt take multiple arguments ###
+Made many variables gloabl so that they dosent required to be passed and passed the Needed one only.
 
-###Problem 3: My girlfriend's father won't let me marry her unless I've a degree###
-Replace the heading and text of this to mention the problem you have faced in your project.
+### Problem 3: Time Constarint as i started the project a day before deadline ###
+working late at night :)
 
-##References##
-- Mention and add [links](https://guides.github.com/features/mastering-markdown/), references, books, research papers, code samples, you used to get help in the project.
-- Use bullets like this.
-- Mention all references. Plagiarism will not be tolerated.
-- You see markdown is not that difficult.
-- You are CS students not some tom harry from BBA SHE-B-A :-).
-- You can and must learn to use markdown and Github. 
-- All future project development will be done in something similar to GITHUB
+## References ##
+- Basic code of game: https://www.geeksforgeeks.org/program-for-conways-game-of-life/
+- How to load 2d array from a file: https://www.reddit.com/r/C_Programming/comments/2nt9n4/reading_from_txt_file_into_2d_array_help_needed/
+- Making multiple threads in a loop: Stackoverflow
+- Many other website for sytax checking and eleminating errors.
