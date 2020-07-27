@@ -2,7 +2,7 @@
 ### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
-**64156** | **Hassan Zaheer** <!--this is the group leader in bold-->
+**64156** | **Hassan Zaheer** <!--this is the group leader in bold.-->
 64160 | Shahmeer khan
 <!-- Replace name and student ids with acutally group member names and ids-->
 ## Approach ##
