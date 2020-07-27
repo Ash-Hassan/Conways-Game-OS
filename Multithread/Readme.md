@@ -22,6 +22,10 @@ Made many variables gloabl so that they dosent required to be passed and passed 
 ### Problem 3: Time Constarint as i started the project a day before deadline ###
 working late at night :)
 
+## Time ##
+- When 70 Threads Were Made: 0.015937 seconds
+- When 50 Threads Were Made: 0.016937 seconds
+
 ## References ##
 - Basic code of game: https://www.geeksforgeeks.org/program-for-conways-game-of-life/
 - How to load 2d array from a file: https://www.reddit.com/r/C_Programming/comments/2nt9n4/reading_from_txt_file_into_2d_array_help_needed/
