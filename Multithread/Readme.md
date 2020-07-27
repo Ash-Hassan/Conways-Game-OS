@@ -23,8 +23,8 @@ Made many variables gloabl so that they dosent required to be passed and passed 
 working late at night :)
 
 ## Time ##
-- When 70 Threads Were Made: 0.015937 seconds
-- When 50 Threads Were Made: 0.016937 seconds
+- When 70 Threads Were Made: **0.015937 seconds**
+- When 50 Threads Were Made: **0.016937 seconds**
 
 ## References ##
 - Basic code of game: https://www.geeksforgeeks.org/program-for-conways-game-of-life/
