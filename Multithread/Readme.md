@@ -8,12 +8,12 @@ StdID | Name
 ## Approach ##
 ### Approach 1: ###
 I got the user input for num of threads that is divisible by 2 and max 10.
-i implement the switch case for 2,4,6,8,10 threads.
+I implement the switch case for 2,4,6,8,10 threads.
 the i started coding of case 2: but soon i ran into problem because i was making the two outer loops into two threads but because they were nested i wasn't able to give the value from one thread to another as i have very little knowledge of mutex and semaphore and pthread conditions.
 So I thought of making a fixed 8 multithread program.
 
 ### Approach 2: ###
-i started to make the isLiving function the thread function and i made a structure for passing multiple threads after that i converted the function into a thread but then the problem occurred as i wasn't able to return the False ot in[x][x] value from the threads...
+I started to make the isLiving function the thread function and i made a structure for passing multiple threads after that i converted the function into a thread but then the problem occurred as i wasn't able to return the False ot in[x][x] value from the threads...
 
 ## Problems Facing ##
 
